@@ -7,7 +7,7 @@ $(".start-button").on("click", () =>{
 });
 
 $(".trigger").on("click", () =>{
+  scream.play();
   $(".quiz-wrapper").css("display", "none");
   $(".jumpscare").css("display", "block");
-  scream.play();
 });
