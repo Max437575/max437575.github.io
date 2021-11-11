@@ -1,5 +1,5 @@
 var scream = new Audio("scream2.mp3");
-scream.volume = 2.0;
+scream.volume = 1.0;
 
 $(".start-button").on("click", () =>{
   $(".start-wrapper").css("display", "none");
