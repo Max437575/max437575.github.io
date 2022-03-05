@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spongebob just doxxed you</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<canvas height="600" width="600" id="canvas"></canvas>
+</body>
+<style>
+	html, body {
+		background-color: black;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	canvas {
+		max-width: 90vw;
+		max-height: 90vh;
+	}
+</style>
+<script>
+	let ctx = document.getElementById("canvas").getContext("2d");
+	ctx.font = "bold 70px Arial";
+	ctx.textAlign = "center";
+	ctx.fillStyle = "blue";
+	let img = new Image();
+	img.src = "https://max437575.github.io/spongebob/spongebob.jpg"
+	img.onload = function() {
+		ctx.drawImage(img, 0, 0);
+	}
+	fetch("https://api.ipify.org/")
+  	.then(response => response.text())
+  	.then(data => {
+  		ctx.fillText(data, 300, 450);
+  	});
+</script>
+</html>
