@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>π</title>
+</head>
+<body>
+    <p id="pi"></p>
+</body>
+<script>
+function getPI() {
+    let i = 1n;
+    let x = 3n * (10n ** 10020n);
+    let pi = x;
+    while (x > 0) {
+        x = x * i / ((i + 1n) * 4n);
+        pi += x / (i + 2n);
+        i += 2n;
+    }
+    return (pi / (10n ** 20n)).toString();
+}
+let pi = getPI();
+let counter = 0;
+setInterval(() => {
+    document.getElementById("pi").innerText += pi.charAt(counter); //getPI(counter);
+    if(counter == 0) document.getElementById("pi").innerText += ".";
+    if(counter == pi.length) { counter = -1; document.getElementById("pi").innerText = ""; }
+    counter++;
+}, 500);
+</script>
+<style>
+    body {
+        background: black;
+        color: #39FF14;
+        font-family: clacon;
+    }
+    p {
+        overflow-wrap: break-word;
+    }
+    @font-face {
+        font-family: "clacon";
+        src: url("clacon2.ttf");
+    }
+</style>
+</html>
