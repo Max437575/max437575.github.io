@@ -16,7 +16,7 @@ class ScoreText{
 	}
 
 	draw(){
-		if(this.counter > 30){ return; }
+		if(this.counter > 30){ scoreTexts.splice(scoreTexts.indexOf(this), 1); }
 		this.y -= 2;
 		this.counter++;
 		ctx.drawImage(tilesetGui, 359, 348, 28, 28, this.x, this.y, 28, 28);
