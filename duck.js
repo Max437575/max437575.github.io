@@ -28,7 +28,7 @@ class Duck{
     }
 
     draw(){
-        if(this.y > 1000) { ducks.splice(ducks.indexOf(this), 1); }
+        if(this.newY > 1000) { ducks.splice(ducks.indexOf(this), 1); }
         ctx.drawImage(tilesetObj, 650, 258, 34, 127, this.newX + (114 / 2) - (34 / 2), this.newY + 97, 34, 127);
         if(this.shot){
             this.newY += this.velocity;
