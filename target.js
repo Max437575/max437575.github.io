@@ -33,7 +33,7 @@ class Target{
     }
 
     draw(){
-        if(this.y > 1000) { targets.splice(targets.indexOf(this), 1); }
+        if(this.newY > 1000) { targets.splice(targets.indexOf(this), 1); }
         if(this.shot){
             this.newY += this.velocity;
             this.velocity += 0.2;
